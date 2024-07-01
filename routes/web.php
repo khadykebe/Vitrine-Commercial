@@ -7,9 +7,12 @@ use App\Http\Controllers\PartenaireController;
 use App\Http\Controllers\SlideController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\InfoController;
 
 
-Route::get('/', function () {return view('index');});
+Route::get('/',[ClientController::class,'index']);
 Route::get('dashdoard',[DashboardController::class,'index'])->name('dashboard');
 Route::post('login',[DashboardController::class,'login'])->name('login');
 //produit
@@ -41,3 +44,14 @@ Route::post('/editSlide/{id}',[SlideController::class,'update'])->name('editSlid
 Route::get('gallery',[GalleryController::class,'index'])->name('gallery');
 Route::post('/addgal',[GalleryController::class,'store'])->name('addgal');
 Route::delete('/deletegat/{id}',[GalleryController::class,'destroy'])->name('deletegat');
+
+// categorie
+
+Route::get('categorie',[CategorieController::class,'index'])->name('categorie');
+Route::post('/addcategorie',[CategorieController::class,'store'])->name('addcategorie');
+Route::post('/aditCategorie/{id}',[CategorieController::class,'update'])->name('aditCategorie');
+Route::delete('/deleteCategorie/{id}',[CategorieController::class,'destroy'])->name('deleteCategorie');
+
+// infos
+Route::get('/info',[InfoController::class,'index'])->name('info');
+Route::post('/editInfo/{id}',[InfoController::class,'update'])->name('editInfo');

@@ -96,14 +96,14 @@
 
 
                 <div class="card-body">
-                  <h5 class="card-title">Images</h5>
+                  <h5 class="card-title">Categorie Produit</h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                       <i class="bi bi-people"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>{{$image}}</h6>
+                      <h6>{{$categorie}}</h6>
                     </div>
                   </div>
 

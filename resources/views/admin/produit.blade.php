@@ -40,7 +40,11 @@
                         <td>{{$produit->description}}</td>
                         <td>{{$produit->categorie}}</td>
                         <td>{{$produit->prix}}</td>
-                        <td>{{$produit->statut}}</td>
+                        @if ($produit->statut == 1)
+                            <td style="color: #24FF92;"><span>dispo</span> </td>
+                        @else
+                            <td style="color: #FF004F;"><span>Nondispo</span>  </td>
+                        @endif
                         <td><img src="{{$produit->image}}" alt=""  width="100"></td>
                         <td>
                             <button class="btn btn-primary edit-btn"  data-id=""   data-toggle="modal" data-target="#editProductModal-{{$produit->id}}"><i class="fas fa-edit"></i></button>
@@ -119,9 +123,9 @@
                     <div class="form-group">
                         <label for="addProductCategory">Categorie</label>
                         <select class="form-control" id="addProductCategory" name="categorie"  required>
-                            <option value="categorie 1">categorie 1</option>
-                            <option value="categorei 2">categorie 2</option>
-                            <option value="categorei 3">categorie 3</option>
+                            @foreach ($categories as $categorie)
+                                <option value="{{$categorie->categorie}}">{{$categorie->categorie}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group">
@@ -176,9 +180,10 @@
                     <div class="form-group">
                         <label for="addProductCategory">Categorie</label>
                         <select class="form-control" id="" name="categorie" required>
-                            <option value="categorie 1">categorie 1</option>
-                            <option value="categorei 2">categorie 2</option>
-                            <option value="categorei 3">categorie 3</option>
+                            <option value="">choisir un cateégorie</option>
+                            @foreach ($categories as $categorie)
+                                <option value="{{$categorie->categorie}}">{{$categorie->categorie}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group">

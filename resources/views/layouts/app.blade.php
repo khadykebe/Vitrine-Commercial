@@ -131,6 +131,19 @@
           <span>Gallery</span>
         </a>
       </li><!-- End Error 404 Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{{route('categorie')}}">
+          <i class="bi bi-dash-circle"></i>
+          <span>Categories</span>
+        </a>
+      </li><!-- End Error 404 Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{{route('info')}}">
+          <i class="bi bi-dash-circle"></i>
+          <span>Infos</span>
+        </a>
+      </li><!-- End Error 404 Page Nav -->
     </ul>
 
   </aside><!-- End Sidebar-->
