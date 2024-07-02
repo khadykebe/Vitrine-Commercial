@@ -97,7 +97,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="addProductForm" method="POST" action="{{route('editProduit', $produit->id)}}">
+                <form id="addProductForm" method="POST" action="{{route('editProduit', $produit->id)}}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="addProductName">Nom</label>

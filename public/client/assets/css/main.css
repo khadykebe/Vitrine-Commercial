@@ -842,7 +842,7 @@
     --background-color:#ffffff;
     --heading-color: #000000;
     width: 100%;
-    min-height: 90vh;
+    min-height: 110vh;
     position: relative;
     padding: 80px 0;
     display: flex;
@@ -863,7 +863,7 @@
 
   .hero:before {
     content: "";
-    background: color-mix(in srgb, var(--background-color), transparent 50%);
+    /* background: color-mix(in srgb, var(--background-color), transparent 50%); */
     position: absolute;
     inset: 0;
     z-index: 2;
@@ -885,7 +885,7 @@
   }
 
   .hero p {
-    color: color-mix(in srgb, var(--default-color), transparent 20%);
+    /* color: color-mix(in srgb, var(--default-color), transparent 20%); */
     margin: 10px 0 0 0;
     font-size: 24px;
   }
@@ -909,7 +909,7 @@
   }
 
   .hero .cta-btn:hover {
-    background: color-mix(in srgb, var(--accent-color), transparent 20%);
+    /* background: color-mix(in srgb, var(--accent-color), transparent 20%); */
   }
 
   @media (max-width: 480px) {
@@ -921,7 +921,7 @@
   .hero .play-btn {
     width: 94px;
     height: 94px;
-    background: radial-gradient(var(--accent-color) 50%, color-mix(in srgb, var(--accent-color), transparent 75%) 52%);
+    /* background: radial-gradient(var(--accent-color) 50%, color-mix(in srgb, var(--accent-color), transparent 75%) 52%); */
     border-radius: 50%;
     display: block;
     position: relative;
@@ -1808,3 +1808,34 @@
   .starter-section {
     /* Add your styles here */
   }
+
+
+.clients {
+  padding: 20px 0;
+}
+
+.clients .client-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.clients .client-logo img {
+  padding: 20px 40px;
+  max-width: 90%;
+  transition: 0.3s;
+  opacity: 0.5;
+  filter: grayscale(100);
+}
+
+.clients .client-logo img:hover {
+  filter: none;
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .clients .client-logo img {
+    padding: 20px;
+  }
+}

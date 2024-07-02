@@ -9,7 +9,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="client/assets/img/favicon.png" rel="icon">
+  <link href="Logo_CAPA_FondBlanc.png" rel="icon">
   <link href="client/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -56,7 +56,7 @@
       <div class="container position-relative d-flex align-items-center justify-content-between">
         <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
           <!-- Uncomment the line below if you also wish to use an image logo -->
-           <img src="client/assets/img/Logo_CAPA.png" alt="">
+           <img src="Logo_CAPA_FondBlanc.png" alt="" class="menu-img">
           <h1 class="sitename">Capa</h1>
         </a>
 
@@ -66,7 +66,7 @@
            <!-- <li><a href="#about">Présentation</a></li> -->
             <li><a href="#specials">Qui Sommes Nous</a></li>
             <li><a href="#menu">Nos Produits</a></li>
-            <li><a href="#testimonials">Nos Partenaires</a></li>
+            <li><a href="#clients">Nos Partenaires</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#contact">Contact</a></li>
             <li> <a href=""  data-bs-toggle="modal" data-bs-target="#loginModal">Se connecter</a> </li>
@@ -115,13 +115,13 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section">
 
-      <img src="{{$slides[0]->image}}" data-aos="fade-in">
+      <img src="Logo_CAPA_FondBlanc.png" data-aos="fade-in">
 
       <div class="container">
         <div class="row">
           <div class="col-lg-8 d-flex flex-column align-items-center align-items-lg-start">
             <h2 data-aos="fade-up" data-aos-delay="100">Bienvenu à <span>CAPA</span></h2>
-            <p data-aos="fade-up" data-aos-delay="200">Votre Compagnie Africaine de Produits Alimentaires</p>
+            <p data-aos="fade-up" data-aos-delay="200">{{$slides[0]->description}}</p>
             <!--<div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
               <a href="#menu" class="cta-btn">Our Menu</a>
               <a href="#book-a-table" class="cta-btn"  data-bs-toggle="modal" data-bs-target="#loginModal">Book a Table</a>
@@ -246,68 +246,28 @@
 
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-
-        <p>Nos Partenaire</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="swiper init-swiper" data-speed="600" data-delay="5000" data-breakpoints="{ &quot;320&quot;: { &quot;slidesPerView&quot;: 1, &quot;spaceBetween&quot;: 40 }, &quot;1200&quot;: { &quot;slidesPerView&quot;: 3, &quot;spaceBetween&quot;: 40 } }">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 1,
-                  "spaceBetween": 40
-                },
-                "1200": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 20
-                }
-              }
-            }
-          </script>
-          <div class="swiper-wrapper">
-
-            @foreach ($partenaires as $partenaire)
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                    <div class="testimonial-item">
-                        <img src="{{$partenaire->logo}}" class="testimonial-img m-2" alt="">
-                        <h3>{{$partenaire->nom}}</h3>
-                    </div>
-                    </div><!-- End testimonial item -->
-                </div>
-            @endforeach
+    <section id="clients" class="clients section">
+        <div class="container section-title" data-aos="fade-up">
+            <p>Partenaire</p>
           </div>
-          <div class="swiper-pagination"></div>
-        </div>
+      <div class="container" data-aos="fade-up">
 
+        <div class="row gy-4">
+            @foreach ($partenaires as $partenaire)
+                <div class="col-xl-2 col-md-3 col-6 client-logo">
+                    <img src="{{$partenaire->logo}}" class="img-fluid" alt="">
+                 </div><!-- End Client Item -->
+            @endforeach
+        </div>
       </div>
 
-    </section><!-- /Testimonials Section -->
+    </section>
 
     <section id="gallery" class="gallery section">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-          <h2>Gallery</h2>
-          <p>Some photos from Our Restaurant</p>
+          <p>Gallery</p>
         </div><!-- End Section Title -->
 
             <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">

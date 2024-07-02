@@ -101,7 +101,7 @@ class ProduitController extends Controller
             'categorie' => $request->categorie,
             'prix' => $request->prix,
             'statut' => $request->statut,
-            // 'image' => 'images/'.$imageName,
+            'image' => 'images/'.$imageName,
         ]);
         return redirect()->route('produit')->with('success','Modification   réussit');
 
